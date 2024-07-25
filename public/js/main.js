@@ -7,7 +7,6 @@ function closeModal() {
     document.getElementById('visaModal').style.display = 'none';
     document.getElementById('modalBackdrop').style.display = 'none';
 }
-
 $(function () {
     $("#wizard").steps({
         headerTag: "h2",
@@ -19,21 +18,27 @@ $(function () {
             finish: "Finaliser",
             next: "Suivant",
             previous: "Avant"
+        },
+        onFinished: function (event, currentIndex) {
+            // Soumettre le formulaire lorsque le bouton "Finaliser" est cliqué
+            $("#wizard").submit();
         }
     });
+});
+
+
+    // Autres fonctionnalités personnalisées
     $('.wizard > .steps li a').click(function () {
         $(this).parent().addClass('checked');
         $(this).parent().prevAll().addClass('checked');
         $(this).parent().nextAll().removeClass('checked');
     });
-    // Custome Jquery Step Button
     $('.forward').click(function () {
         $("#wizard").steps('next');
-    })
+    });
     $('.backward').click(function () {
         $("#wizard").steps('previous');
-    })
-    // Select Dropdown
+    });
     $('html').click(function () {
         $('.select .dropdown').hide();
     });
@@ -42,13 +47,14 @@ $(function () {
     });
     $('.select .select-control').click(function () {
         $(this).parent().next().toggle();
-    })
+    });
     $('.select .dropdown li').click(function () {
         $(this).parent().toggle();
         var text = $(this).attr('rel');
         $(this).parent().prev().find('div').text(text);
-    })
-})
+    });
+
+
 
 function hideImagesOnMobile() {
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
