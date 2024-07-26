@@ -96,6 +96,12 @@
                             Email
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ url('login') }}">
+                            <i class="fa fa-envelope-o"></i>
+                            Admin
+                        </a>
+                    </li>
                 </ul>
 
             </div><!-- /.navbar-collapse -->
