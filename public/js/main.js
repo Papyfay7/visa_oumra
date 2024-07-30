@@ -20,14 +20,13 @@ $(function () {
             previous: "Avant"
         },
         onFinished: function (event, currentIndex) {
-            // Soumettre le formulaire lorsque le bouton "Finaliser" est cliqué
+
             $("#wizard").submit();
         }
     });
 });
 
 
-    // Autres fonctionnalités personnalisées
     $('.wizard > .steps li a').click(function () {
         $(this).parent().addClass('checked');
         $(this).parent().prevAll().addClass('checked');
@@ -59,7 +58,7 @@ $(function () {
 function hideImagesOnMobile() {
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-    if (width <= 768) { // Si la largeur de l'écran est inférieure ou égale à 768 pixels
+    if (width <= 768) {s
         var imageHolders = document.querySelectorAll('.image-holder');
         imageHolders.forEach(function (imageHolder) {
             imageHolder.style.display = 'none';
@@ -72,10 +71,10 @@ function hideImagesOnMobile() {
     }
 }
 
-// Cacher les images au chargement de la page
+
 hideImagesOnMobile();
 
-// Cacher les images lors du redimensionnement de la fenêtre
+
 window.addEventListener('resize', hideImagesOnMobile);
 
 
@@ -100,17 +99,16 @@ document.querySelector('.select-control').addEventListener('click', function () 
     document.querySelector('.dropdown').classList.toggle('show');
 });
 
-// Assurez-vous que le DOM est complètement chargé avant d'exécuter le code
+
 document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('fileInput');
     const uploadText = document.getElementById('uploadText');
 
-    // Vérifiez que les éléments existent avant de les utiliser
+
     if (fileInput && uploadText) {
         fileInput.addEventListener('change', function (event) {
             const files = event.target.files;
             if (files.length > 0) {
-                // Concaténer les noms des fichiers choisis
                 const fileNames = Array.from(files).map(file => file.name).join(', ');
                 uploadText.textContent = fileNames;
             } else {
@@ -144,5 +142,63 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    var editModal = document.getElementById('editModal');
+    editModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget; // Button that triggered the modal
+        var id = button.getAttribute('data-id');
+        var firstName = button.getAttribute('data-first_name');
+        var lastName = button.getAttribute('data-last_name');
+        var email = button.getAttribute('data-email');
+        var phone = button.getAttribute('data-phone');
+        var age = button.getAttribute('data-age');
+        var gender = button.getAttribute('data-gender');
+        var address = button.getAttribute('data-address');
+        var city = button.getAttribute('data-city');
+        var postalCode = button.getAttribute('data-postal_code');
+        var status = button.getAttribute('data-status');
+
+        var modal = editModal.querySelector('form');
+        modal.action = '/registrations/' + id; // Update URL for the edit request
+
+        modal.querySelector('#edit-id').value = id;
+        modal.querySelector('#edit-first_name').value = firstName;
+        modal.querySelector('#edit-last_name').value = lastName;
+        modal.querySelector('#edit-email').value = email;
+        modal.querySelector('#edit-phone').value = phone;
+        modal.querySelector('#edit-age').value = age;
+        modal.querySelector('#edit-gender').value = gender;
+        modal.querySelector('#edit-address').value = address;
+        modal.querySelector('#edit-city').value = city;
+        modal.querySelector('#edit-postal_code').value = postalCode;
+        modal.querySelector('#edit-status').value = status;
+    });
+});
 
 
+
+
+
+
+
+
+
+
+// Configuration de Toastr
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};

@@ -1,10 +1,10 @@
 <html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default" data-assets-path="" data-template="vertical-menu-template-free" data-style="light">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1">
 
-    <title>Demo : Tables - Basic Tables | sneat - Bootstrap Dashboard PRO</title>
+    <title>Dashboard</title>
 
     <meta name="description" content="" />
 
@@ -25,6 +25,7 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
@@ -78,7 +79,7 @@
                                 </g>
                             </svg>
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bold ms-2">sneat</span>
+                        <span class="app-brand-text demo menu-text fw-bold ms-2">Visa Umra</span>
                     </a>
 
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -90,31 +91,20 @@
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboards -->
-                    <li class="menu-item">
+                    <li class="menu-item active open">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-home-smile"></i>
                             <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
                             <span class="badge rounded-pill bg-danger ms-auto">5</span>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="index.html" class="menu-link">
+                            <li class="menu-item active">
+                                <a href="{{url('dashboard')}}" class="menu-link">
                                     <div class="text-truncate" data-i18n="Analytics">Analytics</div>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="app-academy-dashboard.html" target="_blank" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Academy">Academy</div>
-                                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
                                 </a>
                             </li>
                         </ul>
                     </li>
-
-
-
-                    <!-- Front Pages -->
 
 
                     <!-- Apps & Pages -->
@@ -130,20 +120,15 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{url('account')}}" class="menu-link">
                                     <div class="text-truncate" data-i18n="Account">Account</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <!-- <li class="menu-item">
                                 <a href="pages-account-settings-notifications.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Notifications">Notifications</div>
+                                    <div class="text-truncate" data-i18n="Notifications">Add New Admin</div>
                                 </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Connections">Connections</div>
-                                </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -152,240 +137,21 @@
                             <div class="text-truncate" data-i18n="Authentications">Authentications</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                                    <div class="text-truncate" data-i18n="Basic">Login</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                                    <div class="text-truncate" data-i18n="Basic">Register</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                                    <div class="text-truncate" data-i18n="Basic">Forgot Password</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
 
-                    <!-- Components -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-                    <!-- Cards -->
-                    <li class="menu-item">
-                        <a href="cards-basic.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-collection"></i>
-                            <div class="text-truncate" data-i18n="Basic">Cards</div>
-                        </a>
-                    </li>
-                    <!-- User interface -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-box"></i>
-                            <div class="text-truncate" data-i18n="User interface">User interface</div>
-                        </a>
-                        <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="ui-accordion.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Accordion">Accordion</div>
+                                <a href="{{url('register')}}" class="menu-link">
+                                    <div class="text-truncate" data-i18n="Basic">Add New Admin</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="ui-alerts.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Alerts">Alerts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-badges.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Badges">Badges</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-buttons.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Buttons">Buttons</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-carousel.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Carousel">Carousel</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-collapse.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Collapse">Collapse</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-dropdowns.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Dropdowns">Dropdowns</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-footer.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Footer">Footer</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-list-groups.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="List Groups">List groups</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-modals.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Modals">Modals</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-navbar.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Navbar">Navbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-offcanvas.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Offcanvas">Offcanvas</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-pagination-breadcrumbs.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Pagination & Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-progress.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Progress">Progress</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-spinners.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Spinners">Spinners</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-tabs-pills.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Tabs & Pills">Tabs &amp; Pills</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-toasts.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Toasts">Toasts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-tooltips-popovers.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Tooltips & Popovers">Tooltips &amp; Popovers</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-typography.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Typography">Typography</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
 
-                    <!-- Extended components -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-copy"></i>
-                            <div class="text-truncate" data-i18n="Extended UI">Extended UI</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-
-                                <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Perfect Scrollbar">Perfect Scrollbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="extended-ui-text-divider.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Text Divider">Text Divider</div>
-                                </a>
-                            </li>
                         </ul>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="icons-boxicons.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-crown"></i>
-                            <div class="text-truncate" data-i18n="Boxicons">Boxicons</div>
-                        </a>
-                    </li>
-
-                    <!-- Forms & Tables -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-                    <!-- Forms -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div class="text-truncate" data-i18n="Form Elements">Form Elements</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="forms-basic-inputs.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Basic Inputs">Basic Inputs</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="forms-input-groups.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Input groups">Input groups</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div class="text-truncate" data-i18n="Form Layouts">Form Layouts</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="form-layouts-vertical.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Vertical Form">Vertical Form</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="form-layouts-horizontal.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Horizontal Form">Horizontal Form</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Form Validation -->
-                    <li class="menu-item">
-                        <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/form-validation.html" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-list-check"></i>
-                            <div class="text-truncate" data-i18n="Form Validation">Form Validation</div>
-                            <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-                        </a>
                     </li>
                     <!-- Tables -->
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text"> Tableaux Demande</span></li>
                     <li class="menu-item">
                         <a href="{{url('tables')}}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-table"></i>
-                            <div class="text-truncate" data-i18n="Tables">Tables</div>
-                        </a>
-                    </li>
-                    <!-- Data Tables -->
-                    <li class="menu-item">
-                        <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/tables-datatables-basic.html" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-grid"></i>
-                            <div class="text-truncate" data-i18n="Datatables">Datatables</div>
-                            <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-                        </a>
-                    </li>
-                    <!-- Misc -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-                    <li class="menu-item">
-                        <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-support"></i>
-                            <div class="text-truncate" data-i18n="Support">Support</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-file"></i>
-                            <div class="text-truncate" data-i18n="Documentation">Documentation</div>
+                            <div class="text-truncate" data-i18n="Tables">Tableau des demandes</div>
                         </a>
                     </li>
                 </ul>
@@ -415,15 +181,12 @@
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
-                            <li class="nav-item lh-1 me-4">
-                                <a class="github-button" href="https://github.com/themeselection/sneat-html-admin-template-free" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
-                            </li>
 
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                        <img src="images/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -475,11 +238,77 @@
                         </ul>
                     </div>
                 </nav>
+                <!-- Modal Edit -->
+                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Edit Registration</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editForm" action="" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" id="edit-id" name="id" value="">
+                                    <div class="mb-3">
+                                        <label for="edit-first_name" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="edit-first_name" name="first_name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-last_name" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="edit-last_name" name="last_name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="edit-email" name="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-phone" class="form-label">Phone</label>
+                                        <input type="text" class="form-control" id="edit-phone" name="phone" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-age" class="form-label">Age</label>
+                                        <input type="number" class="form-control" id="edit-age" name="age" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-gender" class="form-label">Gender</label>
+                                        <select class="form-select" id="edit-gender" name="gender" required>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-address" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="edit-address" name="address">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-city" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="edit-city" name="city">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-postal_code" class="form-label">Postal Code</label>
+                                        <input type="text" class="form-control" id="edit-postal_code" name="postal_code">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-status" class="form-label">Status</label>
+                                        <select class="form-select" id="edit-status" name="status" required>
+                                            <option value="En cours">En cours</option>
+                                            <option value="Terminée">Terminée</option>
+                                            <option value="Annulée">Annulée</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- / Navbar -->
                 <!-- Content wrapper -->
                 <div class="container-xxl flex-grow-1 container-p-y">
-                    <hr class="my-12" />
+
                     <!-- Small table -->
                     <div class="card">
                         <h5 class="card-header">Liste des demandes</h5>
@@ -518,6 +347,7 @@
                                         <td>{{ $registration->address }}</td>
                                         <td>{{ $registration->city }}</td>
 
+
                                         <td>
                                             @if (is_array($registration->documents))
                                             @foreach ($registration->documents as $document)
@@ -533,8 +363,13 @@
                                         </td>
                                         <td><span class="badge bg-label-success me-1">{{ $registration->status ?? 'N/A' }}</span></td>
                                         <td>
-                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i></a>
-                                            <form action="" method="POST" style="display:inline;">
+                                            <!-- <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i></a> -->
+                                            <a class="dropdown-item" href="{{ route('registrations.update', $registration->id) }}" data-bs-toggle="modal" data-bs-target="#editModal" data-id="{{ $registration->id }}" data-first-name="{{ $registration->first_name }}" data-last-name="{{ $registration->last_name }}" data-email="{{ $registration->email }}" data-phone="{{ $registration->phone }}" data-age="{{ $registration->age }}" data-gender="{{ $registration->gender }}" data-address="{{ $registration->address }}" data-city="{{ $registration->city }}" data-postal-code="{{ $registration->postal_code }}" data-status="{{ $registration->status }}">
+                                                <i class="bx bx-edit-alt me-1"></i>
+                                            </a>
+
+
+                                            <form action="" method=" POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i></a>
@@ -631,10 +466,44 @@
     <script src="vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="vendor/js/menu.js"></script>
 
-    <!-- endbuild -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var editModal = document.getElementById('editModal');
 
-    <!-- Vendors JS -->
+            editModal.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget; // Le bouton qui a ouvert le modal
 
+                // Récupérez les données depuis les attributs data- du bouton
+                var id = button.getAttribute('data-id');
+                var firstName = button.getAttribute('data-first-name');
+                var lastName = button.getAttribute('data-last-name');
+                var email = button.getAttribute('data-email');
+                var phone = button.getAttribute('data-phone');
+                var age = button.getAttribute('data-age');
+                var gender = button.getAttribute('data-gender');
+                var address = button.getAttribute('data-address');
+                var city = button.getAttribute('data-city');
+                var postalCode = button.getAttribute('data-postal-code');
+                var status = button.getAttribute('data-status');
+
+                var form = document.getElementById('editForm');
+                form.action = '{{route("registrations.update", "") }}/' + id; // Mettez à jour l'action du formulaire avec l'ID
+
+                // Pré-remplissez les champs du formulaire
+                form.querySelector('#edit-id').value = id;
+                form.querySelector('#edit-first_name').value = firstName;
+                form.querySelector('#edit-last_name').value = lastName;
+                form.querySelector('#edit-email').value = email;
+                form.querySelector('#edit-phone').value = phone;
+                form.querySelector('#edit-age').value = age;
+                form.querySelector('#edit-gender').value = gender;
+                form.querySelector('#edit-address').value = address;
+                form.querySelector('#edit-city').value = city;
+                form.querySelector('#edit-postal_code').value = postalCode;
+                form.querySelector('#edit-status').value = status;
+            });
+        });
+    </script>
     <!-- Main JS -->
     <script src="js/main1.js"></script>
 

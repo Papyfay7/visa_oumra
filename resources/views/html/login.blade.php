@@ -42,12 +42,13 @@
 <body>
     <!-- Content -->
     @if ($errors->any())
-    <div class="alert alert-danger">
+    <div class="alert alert-danger alert-dismissible" role="alert" style="max-width: 550px; margin: 0 auto;">
         <ul>
             @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
             @endforeach
         </ul>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 

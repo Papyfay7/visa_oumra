@@ -1,0 +1,27 @@
+{
+    "title": "Visa Umra",
+    "motto": "Your Umra, Our Commitment: Get Your Visa Easily",
+    "button_text": "Submit a request",
+    "info_text": "Click the button below to start your visa purchase",
+    "form": {
+        "registration_title": "Registration",
+        "personal_info": "Personal Information",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "age": "Age",
+        "gender_male": "Male",
+        "gender_female": "Female",
+        "additional_info": "Additional Information",
+        "address": "Address",
+        "city": "City",
+        "postal_code": "Postal Code",
+        "upload_documents": "Upload Passport and Visa Photo",
+        "payment_options": "Payment Options",
+        "choose_payment": "Choose Payment Method",
+        "credit_card": "Credit Card",
+        "paypal": "PayPal",
+        "bank_transfer": "Bank Transfer"
+    }
+}
